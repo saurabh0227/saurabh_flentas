@@ -3,7 +3,7 @@ function findMinimumCost(price) {
   price.sort();
   let totalCost = 0;
   for (let i = arrayLength - 1; i > 1; i -= 2) {
-    if (i == 2) {
+    if (i === 2) {
       totalCost += price[2] + price[0];
     } else {
       let price_first = price[i] + price[0] + 2 * price[1];
@@ -11,7 +11,7 @@ function findMinimumCost(price) {
       totalCost += Math.min(price_first, price_second);
     }
   }
-  if (arrayLength == 1) totalCost += price[0];
+  if (arrayLength === 1) totalCost += price[0];
   else totalCost += price[1];
   return totalCost;
 }
